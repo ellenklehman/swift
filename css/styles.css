@@ -1,0 +1,55 @@
+body {
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  line-height: 25px;
+  background-color: #9ADBE7;
+  margin: auto;
+}
+h1 {
+  font-family: 'Lobster', Georgia, Times, serif;
+  font-size: 70px;
+  line-height: 100px;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', Georgia, Times, serif;
+}
+
+h2 {
+  font-size: 30px;
+}
+ p {
+   font-size: 15px;
+}
+
+ol li {
+  list-style-type: none;
+}
+
+#header, .footer {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 5rem;
+}
+.main {
+  background-color: #43A6B9;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.sidebar {
+  float: right;
+  width: 30%;
+  margin-right: 10%;
+  padding: 10px;
+}
+.products {
+  margin-left: 10%;
+}
+.historical {
+  font-weight: bold;
+}
+
+#bakerypic {
+  width: 500px;
+  height: 400px;
+}
