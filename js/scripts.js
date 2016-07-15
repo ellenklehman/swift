@@ -15,6 +15,10 @@ $(document).ready(function() {
     var comment = $("input#comment").val();
     $("ul#comment-list").prepend("<li>" + comment + "</li>");
     $("input#comment").val("");
+
+    $("ul#comment-list").children("li").first().click(function() {
+      $(this).remove();
+    });
     event.preventDefault();
   });
 
