@@ -11,4 +11,11 @@ $(document).ready(function() {
     $("body").removeClass("green-background");
   });
 
+  $("form#comment-form").submit(function(event) {
+    var comment = $("input#comment").val();
+    $("ul#comment-list").prepend("<li>" + comment + "</li>");
+    $("input#comment").val("");
+    event.preventDefault();
+  });
+
 });
