@@ -15,7 +15,7 @@ $(document).ready(function() {
   $("button#add-order").click(function() {
     var age = parseInt(prompt("What is your age?"));
     if (age >= 18) {
-      $(".form").append('<form class="order-form">' +
+      $(".form").append('<form id="order-form">' +
         '<div class="form-group">' +
           '<label for="name">Name:</label>' +
           '<input class="form-control" id="name" type="text" placeholder="Joe Smith">' +
@@ -39,15 +39,35 @@ $(document).ready(function() {
             '<input type="checkbox" name="pastry" value="Rice Crispy"> Paul Revere\'s Midnight Rice Crispy' +
           '</label>' +
         '</div>' +
+        '<button type="submit" id="order-btn" class="btn">Place order!</button>' +
       '</form>');
     } else {
       alert("Sorry you are not old enough to buy our baked goods!");
     }
   });
 
+  $("form#order-form").submit(function(event){
+    alert("hi");
+    var name = $("input#name").val();
+    var email = $("input#email").val();
+    var pastries = [];
+    $("input:checkbox[name=pastry]:checked").each(function(){
+      var individualPastry = $(this).val();
+      pastries.push(individualPastry);
+    });
+    // $(".receipt-name").append(name);
+    // $(".receipt-email").append(email);
+    // pastries.forEach(function(pastry) {
+    //   $(".receipt-pastries").append("<li>"+ pastry + "</li>");
+    // });
+    $("#receipt").show();
+
+    event.preventDefault();
+  });
 
 
-  $("form#comment-form").submit(function(event) {
+
+  $("form#comment-form").submit(function(event){
     var comment = $("input#comment").val();
     $("ul#comment-list").prepend("<li>" + comment + "</li>");
     $("input#comment").val("");
